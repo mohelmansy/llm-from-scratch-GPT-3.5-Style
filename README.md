@@ -128,23 +128,15 @@ Challenge	Solution
 🚀 Future Enhancements
 
 ✅ Train on larger open datasets (WikiText, OpenWebText).
-
 ✅ Scale beyond 100M parameters using gradient checkpointing.
-
 ✅ Add loss & perplexity trend plots.
-
 ✅ Introduce fine-tuning (SFT, RLHF) for instruction tasks.
-
 ✅ Deploy as an API service with FastAPI/Streamlit.
-
 ✅ Key Takeaways
 
 Even with 6GB GPU constraints, a functional LLM pipeline can be implemented.
-
 The project demonstrates core building blocks of modern LLMs.
-
 Serves as both an educational reference and a portfolio artifact for AI engineering roles.
 
 👨‍💻 Author
-
 [Mohamed Elmansy]
