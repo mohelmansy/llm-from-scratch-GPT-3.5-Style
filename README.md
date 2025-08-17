@@ -23,8 +23,7 @@ It highlights:
 ## 🎯 Key Objectives
 ✔️ Develop a **scalable and reproducible** LLM pipeline.  
 ✔️ Train a **100M parameter transformer** under strict VRAM constraints.  
-✔️ Showcase **perplexity evaluation** and **text generation**.  
-✔️ Provide **documentation & results** for academic/portfolio use.  
+✔️ Showcase **perplexity evaluation** and **text generation**.   
 
 ---
 
