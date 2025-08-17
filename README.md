@@ -67,15 +67,14 @@ llm-from-scratch/
 
 🚀 How to Run
 1️⃣ Prepare Dataset
-python src/data/prepare_corpus.py --config configs/gpu_125M.yaml --text_dir data/sample_text --out_dir data/packed
+python src/data/prepare_corpus.py --config configs/gpu_100M_6GB.yaml --text_dir data/sample_text --out_dir data/packed
 
 2️⃣ Train the Model
-python -m src.train --config configs/gpu_125M.yaml
+python -m src.train --config configs/gpu_100M_6GB.yaml
 
 
 ✔️ Checkpoints are saved to:
-
-checkpoints/gpu_125M
+checkpoints/gpu_100M_6GB
 
 3️⃣ Evaluate Perplexity
 python src/eval/perplexity.py --ckpt_dir checkpoints/gpu_100M_6GB
@@ -85,7 +84,6 @@ python src/eval/generation_eval.py --ckpt_dir checkpoints/gpu_100M_6GB --prompt 
 
 
 📂 Generated text is saved in:
-
 checkpoints/gpu_100M_6GB/sample_generation.txt
 
 ---
