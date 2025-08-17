@@ -1,0 +1,5 @@
+
+# Tokenizer training config (byte-level BPE)
+vocab_size: 50257
+min_frequency: 2
+special_tokens: ["<|pad|>", "<s>", "</s>", "<|unk|>"]

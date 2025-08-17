@@ -1,0 +1,34 @@
+# configs/gpu_125M.yaml
+seed: 42
+project_name: "llm-from-scratch"
+tokenizer_dir: "artifacts/tokenizer"
+vocab_size: 32000
+special_tokens:
+  pad_token: "<|pad|>"
+  bos_token: "<s>"
+  eos_token: "</s>"
+
+model:
+  arch: "llama"
+  hidden_size: 768
+  n_layer: 12
+  n_head: 12
+  intermediate_size: 2048
+  max_position_embeddings: 1024
+  rope_theta: 100000.0
+
+train:
+  block_size: 256
+  train_steps: 600
+  eval_every: 100
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 2
+  gradient_accumulation_steps: 8
+  learning_rate: 3.0e-4
+  weight_decay: 0.1
+  warmup_ratio: 0.05
+  lr_scheduler_type: "cosine"
+  logging_steps: 20
+  save_every: 300
+  bf16: false
+  output_dir: "checkpoints/gpu_125M"

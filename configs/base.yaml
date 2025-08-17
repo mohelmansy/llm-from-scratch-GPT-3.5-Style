@@ -1,0 +1,38 @@
+
+seed: 42
+project_name: "llm-from-scratch"
+tokenizer_dir: "artifacts/tokenizer"
+vocab_size: 50257
+special_tokens:
+  pad_token: "<|pad|>"
+  bos_token: "<s>"
+  eos_token: "</s>"
+
+model:
+  arch: "llama"
+  hidden_size: 768
+  n_layer: 12
+  n_head: 12
+  intermediate_size: 2048
+  max_position_embeddings: 2048
+  rope_theta: 100000.0
+
+train:
+  block_size: 64
+  train_steps: 2000
+  eval_every: 200
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 3.0e-4
+  weight_decay: 0.1
+  warmup_ratio: 0.05
+  lr_scheduler_type: "cosine"
+  bf16: true
+  logging_steps: 20
+  save_every: 200
+  output_dir: "checkpoints/small_125M"
+
+data:
+  # text_dir is provided at runtime
+  num_workers: 4

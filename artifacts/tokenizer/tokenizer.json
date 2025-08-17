@@ -1,0 +1,311 @@
+{
+  "version": "1.0",
+  "truncation": null,
+  "padding": null,
+  "added_tokens": [
+    {
+      "id": 0,
+      "content": "<|pad|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 1,
+      "content": "<s>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 2,
+      "content": "</s>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 3,
+      "content": "<|unk|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    }
+  ],
+  "normalizer": null,
+  "pre_tokenizer": {
+    "type": "ByteLevel",
+    "add_prefix_space": true,
+    "trim_offsets": true,
+    "use_regex": true
+  },
+  "post_processor": {
+    "type": "TemplateProcessing",
+    "single": [
+      {
+        "SpecialToken": {
+          "id": "<s>",
+          "type_id": 0
+        }
+      },
+      {
+        "Sequence": {
+          "id": "A",
+          "type_id": 0
+        }
+      },
+      {
+        "SpecialToken": {
+          "id": "</s>",
+          "type_id": 0
+        }
+      }
+    ],
+    "pair": [
+      {
+        "SpecialToken": {
+          "id": "<s>",
+          "type_id": 0
+        }
+      },
+      {
+        "Sequence": {
+          "id": "A",
+          "type_id": 0
+        }
+      },
+      {
+        "SpecialToken": {
+          "id": "</s>",
+          "type_id": 0
+        }
+      },
+      {
+        "SpecialToken": {
+          "id": "<s>",
+          "type_id": 0
+        }
+      },
+      {
+        "Sequence": {
+          "id": "B",
+          "type_id": 0
+        }
+      },
+      {
+        "SpecialToken": {
+          "id": "</s>",
+          "type_id": 0
+        }
+      }
+    ],
+    "special_tokens": {
+      "</s>": {
+        "id": "</s>",
+        "ids": [
+          2
+        ],
+        "tokens": [
+          "</s>"
+        ]
+      },
+      "<s>": {
+        "id": "<s>",
+        "ids": [
+          1
+        ],
+        "tokens": [
+          "<s>"
+        ]
+      }
+    }
+  },
+  "decoder": {
+    "type": "ByteLevel",
+    "add_prefix_space": true,
+    "trim_offsets": true,
+    "use_regex": true
+  },
+  "model": {
+    "type": "BPE",
+    "dropout": null,
+    "unk_token": "<|unk|>",
+    "continuing_subword_prefix": null,
+    "end_of_word_suffix": null,
+    "fuse_unk": false,
+    "byte_fallback": false,
+    "ignore_merges": false,
+    "vocab": {
+      "<|pad|>": 0,
+      "<s>": 1,
+      "</s>": 2,
+      "<|unk|>": 3,
+      ",": 4,
+      ".": 5,
+      "G": 6,
+      "L": 7,
+      "M": 8,
+      "T": 9,
+      "a": 10,
+      "b": 11,
+      "c": 12,
+      "d": 13,
+      "e": 14,
+      "f": 15,
+      "g": 16,
+      "h": 17,
+      "i": 18,
+      "j": 19,
+      "k": 20,
+      "l": 21,
+      "m": 22,
+      "n": 23,
+      "o": 24,
+      "p": 25,
+      "q": 26,
+      "r": 27,
+      "s": 28,
+      "t": 29,
+      "u": 30,
+      "x": 31,
+      "y": 32,
+      "Ċ": 33,
+      "Ġ": 34,
+      "Ġt": 35,
+      "in": 36,
+      "Ġa": 37,
+      "ct": 38,
+      "es": 39,
+      "or": 40,
+      "pr": 41,
+      "ur": 42,
+      "xt": 43,
+      "Ġto": 44,
+      "bin": 45,
+      "en": 46,
+      "ect": 47,
+      "ext": 48,
+      "he": 49,
+      "is": 50,
+      "ject": 51,
+      "Ġc": 52,
+      "Ġf": 53,
+      "Ġs": 54,
+      "Ġin": 55,
+      "Ġpr": 56,
+      "Ġtur": 57,
+      "Ġthe": 58,
+      "Ġturbin": 59
+    },
+    "merges": [
+      [
+        "Ġ",
+        "t"
+      ],
+      [
+        "i",
+        "n"
+      ],
+      [
+        "Ġ",
+        "a"
+      ],
+      [
+        "c",
+        "t"
+      ],
+      [
+        "e",
+        "s"
+      ],
+      [
+        "o",
+        "r"
+      ],
+      [
+        "p",
+        "r"
+      ],
+      [
+        "u",
+        "r"
+      ],
+      [
+        "x",
+        "t"
+      ],
+      [
+        "Ġt",
+        "o"
+      ],
+      [
+        "b",
+        "in"
+      ],
+      [
+        "e",
+        "n"
+      ],
+      [
+        "e",
+        "ct"
+      ],
+      [
+        "e",
+        "xt"
+      ],
+      [
+        "h",
+        "e"
+      ],
+      [
+        "i",
+        "s"
+      ],
+      [
+        "j",
+        "ect"
+      ],
+      [
+        "Ġ",
+        "c"
+      ],
+      [
+        "Ġ",
+        "f"
+      ],
+      [
+        "Ġ",
+        "s"
+      ],
+      [
+        "Ġ",
+        "in"
+      ],
+      [
+        "Ġ",
+        "pr"
+      ],
+      [
+        "Ġt",
+        "ur"
+      ],
+      [
+        "Ġt",
+        "he"
+      ],
+      [
+        "Ġtur",
+        "bin"
+      ]
+    ]
+  }
+}

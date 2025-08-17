@@ -1,0 +1,34 @@
+# Self-contained config for ~100M params on 6GB GPUs
+seed: 42
+project_name: "llm-from-scratch"
+tokenizer_dir: "artifacts/tokenizer"
+vocab_size: 32000
+special_tokens:
+  pad_token: "<|pad|>"
+  bos_token: "<s>"
+  eos_token: "</s>"
+
+model:
+  arch: "llama"
+  hidden_size: 640       # width
+  n_layer: 10            # depth
+  n_head: 10             # heads (must divide hidden_size)
+  intermediate_size: 1792
+  max_position_embeddings: 768
+  rope_theta: 100000.0
+
+train:
+  block_size: 192        # shorter context to reduce memory
+  train_steps: 800       # bump later for better quality
+  eval_every: 100
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 16   # effective batch: 16 sequences
+  learning_rate: 3.0e-4
+  weight_decay: 0.1
+  warmup_ratio: 0.05
+  lr_scheduler_type: "cosine"
+  logging_steps: 20
+  save_every: 400
+  bf16: false            # most 6GB cards don't support bf16; fp16 will auto-enable
+  output_dir: "checkpoints/gpu_100M_6GB"

@@ -1,0 +1,21 @@
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+.ipynb_checkpoints/
+
+# Data & checkpoints
+data/
+checkpoints/
+runs/
+*.pt
+*.bin
+*.safetensors
+
+# OS
+.DS_Store
+
+# VSCode
+.vscode/
